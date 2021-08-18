@@ -9,16 +9,8 @@ from utils import DataInput, compute_auc, compute_hr, dictionary
 tf.reset_default_graph()
 #Data Loading
 #data.columns = ['user_id','item_id','click','time']
-#data1 = pd.read_csv('books.csv')
-#data2 = pd.read_csv('movies.csv')
-data1 = pd.read_csv('amazon_toys_filter.csv')
-data2 = pd.read_csv('amazon_videogames_filter.csv')
-#data1 = pd.read_csv('video_click_filter.txt',low_memory=False)
-#data2 = pd.read_csv('show_click_filter.txt',low_memory=False)
-data1.columns = ['utdid','vdo_id','click','hour']
-data2.columns = ['utdid','vdo_id','click','hour']
-#data1 = data1.sample(frac=0.1)
-#data2 = data2.sample(frac=0.1)
+data1 = pd.read_csv('books.csv')
+data2 = pd.read_csv('movies.csv')
 
 data = pd.concat([data1,data2])
 user_id = data[['utdid']].drop_duplicates().reindex()
