@@ -18,7 +18,7 @@ We use Tensorflow as the backend.
 ## Example to run the codes.
 The instruction of commands has been clearly stated in the codes (see the parse_args function). 
 
-Run PURS:
+Run DASL:
 ```
 python train.py
 ```
@@ -26,4 +26,4 @@ python train.py
 ## Acknowledgement
 This implementation is inspired from [DDTCDR](https://github.com/lpworld/DDTCDR).
 
-Last Update: 2021/08/18
+Last Update: 2021/08/21
