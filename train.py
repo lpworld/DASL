@@ -8,9 +8,11 @@ from utils import DataInput, compute_auc, compute_hr, dictionary
 #Note: this code must be run using tensorflow 1.4.0
 tf.reset_default_graph()
 #Data Loading
-#data.columns = ['user_id','item_id','click','time']
-data1 = pd.read_csv('books.csv')
-data2 = pd.read_csv('movies.csv')
+
+data1 = pd.read_csv('amazon_toys_filter.csv')
+data2 = pd.read_csv('amazon_videogames_filter.csv')
+data1.columns = ['utdid','vdo_id','click','hour']
+data2.columns = ['utdid','vdo_id','click','hour']
 
 data = pd.concat([data1,data2])
 user_id = data[['utdid']].drop_duplicates().reindex()
