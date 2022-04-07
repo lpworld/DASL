@@ -26,7 +26,7 @@ item_id_2 = data2[['vdo_id']].drop_duplicates().reindex()
 item_id_2['video_id'] = np.arange(len(item_id_2))
 data2 = pd.merge(data2, item_id_2, on=['vdo_id'], how='left')
 data1 = data1[['user_id','video_id','click','hour']]
-data1 = data1[['user_id','video_id','click','hour']]
+data2 = data2[['user_id','video_id','click','hour']]
 user_count = len(user_id)
 item_count_1 = len(item_id_1)
 item_count_2 = len(item_id_2)
@@ -79,8 +79,8 @@ random.shuffle(trainset2)
 random.shuffle(testset2)
 trainset1 = trainset1[:len(trainset1)//batch_size*batch_size]
 testset1 = testset1[:len(testset1)//batch_size*batch_size]
-trainset2 = trainset1[:len(trainset2)//batch_size*batch_size]
-testset2 = testset1[:len(testset2)//batch_size*batch_size]
+trainset2 = trainset2[:len(trainset2)//batch_size*batch_size]
+testset2 = testset2[:len(testset2)//batch_size*batch_size]
 
 gpu_options = tf.GPUOptions(allow_growth=True)
 with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
