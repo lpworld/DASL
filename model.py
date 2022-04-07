@@ -142,7 +142,7 @@ class Model(object):
         loss, _ = sess.run([self.loss2, self.train_op2], feed_dict={
                 self.u_2: uij[0],
                 self.hist_2: uij[1],
-                self.hist_cross_2: uij[1],
+                self.hist_cross_2: uij[2],
                 self.i_2: uij[3],
                 self.y_2: uij[4],
                 self.lr: lr
